@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modes Opératoires – HSE</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background-image:url("water-bg.jpg");
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+header{
+  background:rgba(11,94,215,0.85);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+nav{
+  background:rgba(8,66,146,0.85);
+  padding:10px;
+  text-align:center;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  margin:0 10px;
+}
+
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:30px 20px;
+  background:rgba(255,255,255,0.85);
+  border-radius:8px;
+}
+
+/* ===== LISTE EN LIGNES ===== */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+tr{
+  border-bottom:1px solid #ccc;
+}
+
+td{
+  padding:10px;
+  font-size:15px;
+}
+
+td:last-child{
+  text-align:right;
+}
+
+a.pdf{
+  background:#0b5ed7;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a.pdf:hover{
+  background:#084298;
+}
+
+footer{
+  background:rgba(33,37,41,0.85);
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Modes Opératoires (MO)</h1>
+  <p>Procédures • Sécurité • Exploitation</p>
+</header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="Hse.html">HSE</a>
+</nav>
+
+<section>
+  <h2>Liste des Modes Opératoires</h2>
+
+  <table id="moTable">
+    <!-- lignes générées automatiquement -->
+  </table>
+</section>
+
+<footer>
+  <p>© 2025 – Modes Opératoires | Plateforme HSE</p>
+</footer>
+
+<script>
+const table = document.getElementById("moTable");
+
+for(let i=1;i<=100;i++){
+  const num = i.toString().padStart(2,"0");
+
+  table.innerHTML += `
+    <tr>
+      <td>MO ${num} – Mode opératoire</td>
+      <td>
+        <a class="pdf" href="pdf/MO${num}.pdf" target="_blank">
+          Ouvrir PDF
+        </a>
+      </td>
+    </tr>
+  `;
+}
+</script>
+
+</body>
+</html>
