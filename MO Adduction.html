@@ -42,7 +42,6 @@ section{
   border-radius:8px;
 }
 
-/* ===== LISTE EN LIGNES ===== */
 table{
   width:100%;
   border-collapse:collapse;
@@ -87,39 +86,43 @@ footer{
 <body>
 
 <header>
-  <h1>Modes Opératoires (MO)</h1>
+  <h1>Modes Opératoires</h1>
   <p>Procédures • Sécurité • Exploitation</p>
 </header>
 
-<nav>
-  <a href="index.html">Accueil</a>
-  <a href="Hse.html">HSE</a>
-</nav>
-
 <section>
-  <h2>Liste des Modes Opératoires</h2>
-
-  <table id="moTable">
-    <!-- lignes générées automatiquement -->
-  </table>
+  <table id="moTable"></table>
 </section>
 
 <footer>
   <p>© 2025 – Modes Opératoires | Plateforme HSE</p>
 </footer>
 
+<!-- ✅ JavaScript داخل نفس الصفحة -->
 <script>
+const moData = {
+  "01":"تشغيل المضخة الغاطسة",
+  "02":"إيقاف المضخة بأمان",
+  "03":"المعالجة بالكلور",
+  "04":"غسل المرشحات",
+  "05":"أخذ عينات المياه"
+  // أضف الباقي هنا
+};
+
 const table = document.getElementById("moTable");
 
-for(let i=1;i<=100;i++){
+for(let i=1;i<=10;i++){
   const num = i.toString().padStart(2,"0");
+  const title = moData[num] || "Mode opératoire";
 
   table.innerHTML += `
     <tr>
-      <td>MO ${num} – Mode opératoire</td>
+      <td>MO ${num} – ${title}</td>
       <td>
-        <a class="pdf" href="pdf/MO${num}.pdf" target="_blank">
-          Ouvrir PDF
+        <a class="pdf"
+           href="https://drive.google.com/file/d/ID_MO${num}/preview"
+           target="_blank">
+           Ouvrir PDF
         </a>
       </td>
     </tr>
