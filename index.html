@@ -54,33 +54,33 @@ section {
   min-height: 220px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
 .card h2 {
   background: rgba(255,255,255,0.6);
   padding: 5px;
   border-radius: 4px;
-  margin-top: 10px;
+  margin: 0 0 10px 0;
 }
 
 .card a {
   display: inline-block;
-  padding: 8px 16px;
-  background: rgba(11, 94, 215, 0.8);
-  color: #fff;
+  padding: 6px 10px;
+  margin: 4px 0;
+  background: rgba(11,0,0,0.0);
+  color: #0b5ed7;
   text-decoration: none;
-  border-radius: 6px;
   font-weight: bold;
-  margin-bottom: 10px;
 }
 
 .card a:hover {
-  background: rgba(8, 66, 146, 0.9);
+  text-decoration: underline;
 }
 
 .spacer {
-  flex: 1; /* يملأ المساحة بين العنوان والزر */
+  flex: 1;
 }
 
 footer {
@@ -117,31 +117,27 @@ footer {
     </div>
 
     <!-- HSE -->
-    <div class="card" style="background-image: url('hse.png');">
+    <div class="card" style="background-image: url('hse.png');" onclick="location.href='Hse.html'">
       <h2>HSE</h2>
       <div class="spacer"></div>
-      <a href="Hse.html">Accéder</a>
     </div>
 
     <!-- NOTE -->
-    <div class="card" style="background-image: url('note.png');">
+    <div class="card" style="background-image: url('note.png');" onclick="location.href='note.html'">
       <h2>NOTE</h2>
       <div class="spacer"></div>
-      <a href="note.html">Accéder</a>
     </div>
 
     <!-- ATELIER EAUX -->
-    <div class="card" style="background-image: url('atelier.png');">
+    <div class="card" style="background-image: url('atelier.png');" onclick="location.href='Atelier.html'">
       <h2>ATELIER EAUX</h2>
       <div class="spacer"></div>
-      <a href="Atelier.html">Accéder</a>
     </div>
 
     <!-- STATIONS -->
-    <div class="card" style="background-image: url('stations.png');">
+    <div class="card" style="background-image: url('stations.png');" onclick="location.href='Stations.html'">
       <h2>STATIONS</h2>
       <div class="spacer"></div>
-      <a href="Stations.html">Accéder</a>
     </div>
 
   </div>
