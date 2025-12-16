@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accueil – Système HSE</title>
 <style>
 body {
   margin: 0;
@@ -34,15 +33,16 @@ header {
 section {
   max-width: 1000px;
   margin: auto;
-  padding: 30px 20px;
+  padding: 20px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  grid-template-columns: 1fr 1fr; /* بالضبط بطاقتين في الصف */
   gap: 20px;
 }
 
+/* البطاقات */
 .card {
   background-size: cover;
   background-position: center;
@@ -55,32 +55,47 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  cursor: pointer;
+  cursor: pointer; /* النقر على البطاقة */
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card h2 {
   background: rgba(255,255,255,0.6);
   padding: 5px;
   border-radius: 4px;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 
-.card a {
-  display: inline-block;
-  padding: 6px 10px;
-  margin: 4px 0;
-  background: rgba(11,0,0,0.0);
-  color: #0b5ed7;
+/* بطاقة الطوارئ */
+.card.urgence {
+  background-color: red;
+  color: #fff;
+  grid-column: span 2; /* تمتد على العمودين */
+  padding: 20px;
+}
+
+.card.urgence a {
+  display: block;
+  margin: 5px 0;
+  color: red;
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
 }
 
-.card a:hover {
-  text-decoration: underline;
+.card.urgence a:hover {
+  background: #f5f5f5;
 }
 
-.spacer {
-  flex: 1;
+/* البطاقات الأخرى */
+.card a {
+  display: none; /* حذف زر Accéder */
 }
 
 footer {
@@ -96,48 +111,33 @@ footer {
 </head>
 <body>
 <div class="overlay">
-
-<header>
-  <h1>Système HSE</h1>
-  <p>Santé • Sécurité • Environnement</p>
-</header>
-
 <section>
-  <h2>Menu principal</h2>
   <div class="grid">
 
-    <!-- ===== Carte Urgence ===== -->
-    <div class="card" style="background-color: rgba(255,0,0,0.4);">
+    <!-- بطاقة الطوارئ -->
+    <div class="card urgence">
       <h2>Contact d'urgence</h2>
-      <div class="spacer"></div>
-      <a href="tel:0667213333">DCI beniAmir</a>
+      <a href="tel:0667213333">DCI BeniAmir</a>
       <a href="tel:0662375749">DCI 7900</a>
-      <a href="tel:0641991774">DCI Sidi chennane</a>
+      <a href="tel:0641991774">DCI Sidi Chennane</a>
       <a href="tel:0641991776">DCI PointB</a>
     </div>
 
-    <!-- HSE -->
-    <div class="card" style="background-image: url('hse.png');" onclick="location.href='Hse.html'">
+    <!-- البطاقات الأخرى -->
+    <div class="card" onclick="window.location.href='Hse.html';" style="background-image:url('hse.png');">
       <h2>HSE</h2>
-      <div class="spacer"></div>
     </div>
 
-    <!-- NOTE -->
-    <div class="card" style="background-image: url('note.png');" onclick="location.href='note.html'">
+    <div class="card" onclick="window.location.href='note.html';" style="background-image:url('note.png');">
       <h2>NOTE</h2>
-      <div class="spacer"></div>
     </div>
 
-    <!-- ATELIER EAUX -->
-    <div class="card" style="background-image: url('atelier.png');" onclick="location.href='Atelier.html'">
+    <div class="card" onclick="window.location.href='Atelier.html';" style="background-image:url('atelier.png');">
       <h2>ATELIER EAUX</h2>
-      <div class="spacer"></div>
     </div>
 
-    <!-- STATIONS -->
-    <div class="card" style="background-image: url('stations.png');" onclick="location.href='Stations.html'">
+    <div class="card" onclick="window.location.href='Stations.html';" style="background-image:url('stations.png');">
       <h2>STATIONS</h2>
-      <div class="spacer"></div>
     </div>
 
   </div>
