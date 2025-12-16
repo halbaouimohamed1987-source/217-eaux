@@ -48,7 +48,7 @@ td:last-child{
   text-align:right;
 }
 
-a.pdf{
+a.button{
   background:#0b5ed7;
   color:#fff;
   padding:6px 14px;
@@ -57,7 +57,7 @@ a.pdf{
   font-weight:bold;
 }
 
-a.pdf:hover{
+a.button:hover{
   background:#084298;
 }
 
@@ -79,7 +79,7 @@ footer{
 </header>
 
 <section>
-  <h2>Liste des Modes Opératoires</h2>
+  <h2>Liste des Documents</h2>
   <table id="moTable"></table>
 </section>
 
@@ -88,38 +88,34 @@ footer{
 </footer>
 
 <script>
-const moList = [
-  { code:"MO-01", title:"Préparation des rapports", id:"14yRS1TqVtHt-6jid_qUEA0UHMUj993OQ" },
-  { code:"MO-02", title:"Suivi des travaux", id:"1T0MhgaabAXj11qjO0bm6YOCxePaA_trJ" },
-  { code:"MO-03", title:"Suivi des certificats", id:"1DiG7_8iSn3TOGVS5RhF5Z8aFbFJu6c2K" },
-
-  { code:"MO-04-01", title:"Révision des pompes KSP – Démontage", id:"1Mqx4_DJ9cVSpfSclxXzLP-SlfyGraRFG" },
-  { code:"MO-04-02", title:"Révision des pompes KSP – Montage", id:"1T2fye6HP-mcRseOZd7c9PAn2wU32JT5S" },
-
-  { code:"MO-05-01", title:"Révision des surpresseurs – Démontage", id:"1I-nP0fwMwL7qQ761w4ZwchIqo3dAvsPc" },
-  { code:"MO-05-02", title:"Révision des surpresseurs – Montage", id:"1EA6K3gCJKlAHReCwyoIPpVQiK6iVapod" },
-
-  { code:"MO-06", title:"Essais des pompes émergées", id:"1LKiXGEAFWWkoEwfjpoFQY7qG0vd_MNR7" },
-  { code:"MO-07", title:"Révision des soupapes de décharge", id:"1AW5vyxwEu9tmNrxwUoq67uGuTPkJWFsm" },
-  { code:"MO-08", title:"Entretien systématique des pompes vide-cave", id:"1jqVbxNNa5XmfYS_OY-HXwopVSVV1vUvn" },
-  { code:"MO-09", title:"Entretien groupes électrogènes", id:"1liYMTAKpLBiTMFgEdZrGAURXqnu94_PM" },
-  { code:"MO-10", title:"Travaux d’oxycoupage", id:"1IptE_ImKvDFRaNyxPQXH4cA8QLOX8Av5" },
-  { code:"MO-11", title:"Travaux de soudage", id:"1s7fHUb1ZV1Cg1zBLBqKiHqHGSA6Kw5n9" },
-  { code:"MO-12", title:"Travaux de moulage", id:"1Mq4E2TJdLb7XvBsz7BnaOYjZLtMjoPXr" }
+const docs = [
+  { title:"Préparation des rapports", mo:"14yRS1TqVtHt-6jid_qUEA0UHMUj993OQ", adrpt:"1T0MhgaabAXj11qjO0bm6YOCxePaA_trJ" },
+  { title:"Suivi des travaux", mo:"1DiG7_8iSn3TOGVS5RhF5Z8aFbFJu6c2K", adrpt:"1Mqx4_DJ9cVSpfSclxXzLP-SlfyGraRFG" },
+  { title:"Suivi des certificats", mo:"1T2fye6HP-mcRseOZd7c9PAn2wU32JT5S", adrpt:"1I-nP0fwMwL7qQ761w4ZwchIqo3dAvsPc" },
+  { title:"Révision des pompes KSP – Démontage", mo:"1EA6K3gCJKlAHReCwyoIPpVQiK6iVapod", adrpt:"1LKiXGEAFWWkoEwfjpoFQY7qG0vd_MNR7" },
+  { title:"Révision des pompes KSP – Montage", mo:"1AW5vyxwEu9tmNrxwUoq67uGuTPkJWFsm", adrpt:"1jqVbxNNa5XmfYS_OY-HXwopVSVV1vUvn" },
+  { title:"Révision des surpresseurs – Démontage", mo:"1liYMTAKpLBiTMFgEdZrGAURXqnu94_PM", adrpt:"1IptE_ImKvDFRaNyxPQXH4cA8QLOX8Av5" },
+  { title:"Révision des surpresseurs – Montage", mo:"1s7fHUb1ZV1Cg1zBLBqKiHqHGSA6Kw5n9", adrpt:"1Mq4E2TJdLb7XvBsz7BnaOYjZLtMjoPXr" },
+  { title:"Essais des pompes émergées", mo:"14yRS1TqVtHt-6jid_qUEA0UHMUj993OQ", adrpt:"1T0MhgaabAXj11qjO0bm6YOCxePaA_trJ" },
+  { title:"Révision des soupapes de décharge", mo:"1DiG7_8iSn3TOGVS5RhF5Z8aFbFJu6c2K", adrpt:"1Mqx4_DJ9cVSpfSclxXzLP-SlfyGraRFG" },
+  { title:"Entretien systématique des pompes vide-cave", mo:"1T2fye6HP-mcRseOZd7c9PAn2wU32JT5S", adrpt:"1I-nP0fwMwL7qQ761w4ZwchIqo3dAvsPc" },
+  { title:"Entretien groupes électrogènes", mo:"1EA6K3gCJKlAHReCwyoIPpVQiK6iVapod", adrpt:"1LKiXGEAFWWkoEwfjpoFQY7qG0vd_MNR7" },
+  { title:"Travaux d’oxycoupage", mo:"1AW5vyxwEu9tmNrxwUoq67uGuTPkJWFsm", adrpt:"1jqVbxNNa5XmfYS_OY-HXwopVSVV1vUvn" },
+  { title:"Travaux de soudage", mo:"1liYMTAKpLBiTMFgEdZrGAURXqnu94_PM", adrpt:"1IptE_ImKvDFRaNyxPQXH4cA8QLOX8Av5" },
+  { title:"Travaux de moulage", mo:"1s7fHUb1ZV1Cg1zBLBqKiHqHGSA6Kw5n9", adrpt:"1Mq4E2TJdLb7XvBsz7BnaOYjZLtMjoPXr" }
 ];
 
 const table = document.getElementById("moTable");
 
-moList.forEach(mo=>{
+docs.forEach(doc=>{
   table.innerHTML += `
     <tr>
-      <td>${mo.code} – ${mo.title}</td>
+      <td>${doc.title}</td>
       <td>
-        <a class="pdf"
-           href="https://drive.google.com/file/d/${mo.id}/preview"
-           target="_blank">
-           Ouvrir PDF
-        </a>
+        <div style="display:flex; gap:8px; justify-content:flex-end;">
+          <a class="button" href="https://drive.google.com/file/d/${doc.mo}/preview" target="_blank">MO</a>
+          <a class="button" href="https://drive.google.com/file/d/${doc.adrpt}/preview" target="_blank">ADRPT</a>
+        </div>
       </td>
     </tr>
   `;
