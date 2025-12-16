@@ -1,71 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urgence – Système HSE</title>
-<style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000; /* خلفية سوداء للطوارئ */
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 40px;
-    text-align: center;
-    color: #ff0000;
-}
-
-#emergencyBtn {
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 50px 80px;
-    font-size: 2em;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.1s;
-}
-
-#emergencyBtn:active {
-    transform: scale(0.95);
-}
-
-p {
-    margin-top: 20px;
-    font-size: 1.2em;
-    text-align: center;
-    color: #fff;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HSE - Santé Sécurité Environnement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #0b5ed7;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #084298;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background: #0b5ed7;
+    }
+    section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #212529;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>ALERTE - URGENCE</h1>
+<section id="politique">
+  <div class="card">
+    <h2>Politique HSE</h2>
+    <p>Notre politique HSE vise à prévenir les accidents du travail, protéger la santé des travailleurs et réduire l’impact environnemental de nos activitésɓbbbɓbbbbbbbnn
+    nnbhhhhhhhhhhhhhhhhhhĥhhuyg
+    ghggtyhhhhjjkkjjjkkkk
+    hhgggggddfggghgggtgg
+    gggfhfufuuhfjfufufu
+    fuufufufyfyufufuufufuu
+    fjfjjfjfjfjfjjjjfufjfuf
+    ugjfkfufifiifiififufu
+    ufuufufuuf.</p>
+  </div>
+</section>
 
-<button id="emergencyBtn">📞 Appeler le Service d'Urgence</button>
+<section id="risques">
+  <div class="card">
+    <h2>Analyse des risques</h2>
+    <ul>
+      <li>Risques mécaniques</li>
+      <li>Risques électriques</li>
+      <li>Risques chimiques</li>
+      <li>Espaces confinés</li>
+      <li>Travail en hauteur</li>
+    </ul>
+  </div>
+</section>
 
-<p>Appuyez sur le bouton pour contacter immédiatement le numéro d'urgence.</p>
+<section id="epi">
+  <div class="card">
+    <h2>Équipements de Protection Individuelle (EPI)</h2>
+    <ul>
+      <li>Casque de sécurité</li>
+      <li>Chaussures de sécurité</li>
+      <li>Lunettes de protection</li>
+      <li>Gants</li>
+      <li>Masque respiratoire</li>
+    </ul>
+  </div>
+</section>
 
-<script>
-// رقم الطوارئ - عدّل الرقم حسب الحاجة
-const emergencyNumber = "0666289022";
+<section id="formations">
+  <div class="card">
+    <h2>Formations HSE</h2>
+    <ul>
+      <li>Travail en hauteur</li>
+      <li>Espace confiné</li>
+      <li>LOTO</li>
+      <li>Manipulation produits chimiques</li>
+      <li>Premier secours</li>
+    </ul>
+  </div>
+</section>
 
-document.getElementById("emergencyBtn").onclick = function() {
-    window.location.href = `tel:${emergencyNumber}`;
-};
-</script>
+<section id="urgences">
+  <div class="card">
+    <h2>Procédures d’urgence</h2>
+    <p>En cas d’accident ou de situation dangereuse :</p>
+    <ol>
+      <li>Arrêter le travail en sécurité</li>
+      <li>Alerter le responsable</li>
+      <li>Appliquer la procédure d’urgence</li>
+      <li>Appeler les secours si nécessaire</li>
+    </ol>
+  </div>
+</section>
+       <a href="index.html">العودة للصفحة الرئيسية</a>
+<footer>
+  <p>© 2025 – Système HSE | Santé Sécurité Environnement</p>
+</footer>
 
 </body>
 </html>
