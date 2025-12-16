@@ -1,108 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atelier – Système HSE</title>
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#f4f6f8;
-      color:#333;
-    }
-    header{
-      background:#6f42c1;
-      color:#fff;
-      text-align:center;
-      padding:22px 15px;
-    }
-    nav{
-      background:#4b2c82;
-      padding:10px;
-      text-align:center;
-    }
-    nav a{
-      color:#fff;
-      margin:0 10px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-    nav a:hover{ text-decoration:underline; }
-    section{
-      max-width:1000px;
-      margin:auto;
-      padding:30px 20px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-    .card{
-      background:#fff;
-      border-radius:8px;
-      padding:20px;
-      box-shadow:0 4px 8px rgba(0,0,0,.1);
-    }
-    .card h3{margin-top:0;color:#4b2c82}
-    .card a{
-      display:inline-block;
-      margin-top:12px;
-      padding:8px 14px;
-      background:#6f42c1;
-      color:#fff;
-      text-decoration:none;
-      border-radius:6px;
-      font-size:14px;
-      font-weight:bold;
-    }
-    .card a:hover{background:#59339d}
-    footer{
-      background:#212529;
-      color:#fff;
-      text-align:center;
-      padding:12px;
-      font-size:14px;
-      margin-top:30px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier – Système HSE</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#eef2f7;
+  color:#fff;
+}
+
+header{
+  background:#6f42c1;
+  color:#ccc;
+  text-align:center;
+  padding:25px 15px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+header h1{
+  margin:0;
+  font-size:28px;
+}
+
+header p{
+  margin:5px 0 0;
+  font-size:16px;
+}
+
+section{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 20px 50px 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  padding:25px 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  cursor:pointer;
+  transition:all 0.3s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h3{
+  margin:0 0 10px 0;
+  font-size:20px;
+  color:#6f42c1;
+}
+
+.card p{
+  margin:0;
+  font-size:15px;
+  color:#555;
+  flex-grow:1;
+}
+
+footer{
+  background:#212529;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+}
+
+@media(max-width:600px){
+  header h1{font-size:22px;}
+  header p{font-size:14px;}
+  .card{padding:20px;}
+}
+</style>
 </head>
 <body>
-
-<header>
-  <h1>Atelier</h1>
-  <p>Maitenance • Solutions • accompagnement</p>
-</header>
-
-<nav>
-  <a href="index.html">Accueil</a>
-</nav>
-
 <section>
-  <h2>Gestion des postes de travail</h2>
-  <p>Sélectionnez un poste ou une catégorie pour accéder aux documents et procédures.</p>
-
   <div class="grid">
-
-    <div class="card">
-      <h3>Atelier</h3>
-      <p>Procédures d’exploitation, risques et consignes de sécurité.</p>
-      <a href="MO Atelier.html">Accéder</a>
+    <div class="card" onclick="window.location.href='MO Atelier.html';">
+               <h3>Atelier mécanique</h3>
+     <p>Mode Opératoire.</p>
+     <p>ADRPT.</p>
     </div>
 
-    <div class="card">
-      <h3>Station des pompes</h3>
-      <p>Procédures d’exploitation, risques et consignes de sécurité.</p>
-      <a href="MO Station.html">Accéder</a>
+    <div class="card" onclick="window.location.href='MO Station.html';">
+      <h3>Salle des pompes</h3>
+     <p>Mode Opératoire.</p>
+     <p>ADRPT.</p>
     </div>
 
-    <div class="card">
-      <h3>Adduction</h3>
-      <p>Procédures d’exploitation, risques et consignes de sécurité.</p>
-      <a href="MO Adduction.html">Accéder</a>
+    <div class="card" onclick="window.location.href='MO Adduction.html';">
+      <h3>Réseau d'Adduction</h3>
+     <p>Mode Opératoire.</p>
+     <p>ADRPT.</p>
     </div>
-
   </div>
 </section>
 
