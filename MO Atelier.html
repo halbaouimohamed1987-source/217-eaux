@@ -21,25 +21,12 @@ header{
   padding:20px;
 }
 
-nav{
-  background:rgba(8,66,146,0.85);
-  padding:10px;
-  text-align:center;
-}
-
-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  margin:0 10px;
-}
-
 section{
   max-width:1000px;
-  margin:auto;
+  margin:40px auto;
   padding:30px 20px;
-  background:rgba(255,255,255,0.85);
-  border-radius:8px;
+  background:rgba(255,255,255,0.88);
+  border-radius:10px;
 }
 
 table{
@@ -52,8 +39,9 @@ tr{
 }
 
 td{
-  padding:10px;
+  padding:12px 8px;
   font-size:15px;
+  color:#000;
 }
 
 td:last-child{
@@ -63,8 +51,8 @@ td:last-child{
 a.pdf{
   background:#0b5ed7;
   color:#fff;
-  padding:6px 12px;
-  border-radius:4px;
+  padding:6px 14px;
+  border-radius:5px;
   text-decoration:none;
   font-weight:bold;
 }
@@ -78,7 +66,7 @@ footer{
   color:#fff;
   text-align:center;
   padding:12px;
-  margin-top:30px;
+  margin-top:40px;
 }
 </style>
 </head>
@@ -86,48 +74,56 @@ footer{
 <body>
 
 <header>
-  <h1>Modes Opératoires</h1>
+  <h1>Modes Opératoires (MO)</h1>
   <p>Procédures • Sécurité • Exploitation</p>
 </header>
 
 <section>
+  <h2>Liste des Modes Opératoires</h2>
   <table id="moTable"></table>
 </section>
 
 <footer>
-  <p>© 2025 – Modes Opératoires | Plateforme HSE</p>
+  <p>© 2025 – Plateforme HSE</p>
 </footer>
 
-<!-- ✅ JavaScript داخل نفس الصفحة -->
 <script>
-const moData = {
-  "01":"تشغيل المضخة الغاطسة",
-  "02":"إيقاف المضخة بأمان",
-  "03":"المعالجة بالكلور",
-  "04":"غسل المرشحات",
-  "05":"أخذ عينات المياه"
-  // أضف الباقي هنا
-};
+const moList = [
+  { code:"MO-01", title:"Préparation des rapports", id:"14yRS1TqVtHt-6jid_qUEA0UHMUj993OQ" },
+  { code:"MO-02", title:"Suivi des travaux", id:"1T0MhgaabAXj11qjO0bm6YOCxePaA_trJ" },
+  { code:"MO-03", title:"Suivi des certificats", id:"1DiG7_8iSn3TOGVS5RhF5Z8aFbFJu6c2K" },
+
+  { code:"MO-04-01", title:"Révision des pompes KSP – Démontage", id:"1Mqx4_DJ9cVSpfSclxXzLP-SlfyGraRFG" },
+  { code:"MO-04-02", title:"Révision des pompes KSP – Montage", id:"1T2fye6HP-mcRseOZd7c9PAn2wU32JT5S" },
+
+  { code:"MO-05-01", title:"Révision des surpresseurs – Démontage", id:"1I-nP0fwMwL7qQ761w4ZwchIqo3dAvsPc" },
+  { code:"MO-05-02", title:"Révision des surpresseurs – Montage", id:"1EA6K3gCJKlAHReCwyoIPpVQiK6iVapod" },
+
+  { code:"MO-06", title:"Essais des pompes émergées", id:"1LKiXGEAFWWkoEwfjpoFQY7qG0vd_MNR7" },
+  { code:"MO-07", title:"Révision des soupapes de décharge", id:"1AW5vyxwEu9tmNrxwUoq67uGuTPkJWFsm" },
+  { code:"MO-08", title:"Entretien systématique des pompes vide-cave", id:"1jqVbxNNa5XmfYS_OY-HXwopVSVV1vUvn" },
+  { code:"MO-09", title:"Entretien groupes électrogènes", id:"1liYMTAKpLBiTMFgEdZrGAURXqnu94_PM" },
+  { code:"MO-10", title:"Travaux d’oxycoupage", id:"1IptE_ImKvDFRaNyxPQXH4cA8QLOX8Av5" },
+  { code:"MO-11", title:"Travaux de soudage", id:"1s7fHUb1ZV1Cg1zBLBqKiHqHGSA6Kw5n9" },
+  { code:"MO-12", title:"Travaux de moulage", id:"1Mq4E2TJdLb7XvBsz7BnaOYjZLtMjoPXr" }
+];
 
 const table = document.getElementById("moTable");
 
-for(let i=1;i<=10;i++){
-  const num = i.toString().padStart(2,"0");
-  const title = moData[num] || "Mode opératoire";
-
+moList.forEach(mo=>{
   table.innerHTML += `
     <tr>
-      <td>MO ${num} – ${title}</td>
+      <td>${mo.code} – ${mo.title}</td>
       <td>
         <a class="pdf"
-           href="https://drive.google.com/file/d/ID_MO${num}/preview"
+           href="https://drive.google.com/file/d/${mo.id}/preview"
            target="_blank">
            Ouvrir PDF
         </a>
       </td>
     </tr>
   `;
-}
+});
 </script>
 
 </body>
