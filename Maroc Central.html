@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maroc Central – Système HSE</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #dbe6f1);
+  color: #333;
+}
+
+section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px 60px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid rgba(111,66,193,0.2);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+  border-color: rgba(111,66,193,0.5);
+}
+
+.card h3 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  color: #6f42c1;
+  text-align: center;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  line-height: 1.6;
+}
+
+footer {
+  background: #212529;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+  margin-top: 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+@media(max-width: 768px){
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .card {
+    padding: 25px 20px;
+  }
+  .card h3 {
+    font-size: 22px;
+  }
+  .card p {
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <div class="grid">
+
+    <div class="card" onclick="window.location.href='Maroc Central.html';">
+      <h3>Maroc Central1</h3>
+       <p>Mode Opératoire</p>
+      <p>ADRPT</p>
+      <p>Plans de Consignation</p>
+      
+    </div>
+
+    <div class="card" onclick="window.location.href='Maroc Central.html';">
+      <h3>Maroc Central2</h3>
+      <p>Mode Opératoire</p>
+      <p>ADRPT</p>
+      <p>Plans de Consignation</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='Maroc Central.html';">
+      <h3>Maroc Central3</h3>
+      <p>Mode Opératoire</p>
+      <p>ADRPT</p>
+      <p>Plans de Consignation</p>
+    </div>
+    
+    <div class="card" onclick="window.location.href='Maroc Central.html';">
+      <h3>Maroc Central4</h3>
+      <p>Mode Opératoire</p>
+      <p>ADRPT</p>
+      <p>Plans de Consignation</p>
+      
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 – Stations | Plateforme HSE</p>
+</footer>
+
+</body>
+</html>
