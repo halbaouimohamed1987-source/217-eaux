@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes – HSE</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background-image:url("water-bg.jpg");
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+header{
+  background:rgba(11,94,215,0.85);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+section{
+  max-width:1000px;
+  margin:40px auto;
+  padding:30px 20px;
+  background:rgba(255,255,255,0.88);
+  border-radius:10px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+tr{
+  border-bottom:1px solid #ccc;
+}
+
+td{
+  padding:12px 8px;
+  font-size:15px;
+  color:#000;
+}
+
+td:last-child{
+  text-align:right;
+}
+
+a.pdf{
+  background:#0b5ed7;
+  color:#fff;
+  padding:6px 16px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a.pdf:hover{
+  background:#084298;
+}
+
+footer{
+  background:rgba(33,37,41,0.85);
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>NOTES</h1>
+  <p>Procédures • Sécurité • Exploitation</p>
+</header>
+<section>
+  <table id="moTable"></table>
+</section>
+
+<footer>
+  <p>© 2025 – Plateforme HSE</p>
+</footer>
+
+<script>
+const moList = [
+  {
+    title: "Interdiction des branchements électriques non conformes",
+    link: "https://drive.google.com/file/d/1BBW_WJa82pBLPDZSBgLrgmoOwMARk6/view"
+  },
+  {
+    title: "Conformité des équipements et outillage et règles de leur utilisation",
+    link: "https://drive.google.com/file/d/1EtZWMWRAhNHBTAUILp0beFMoK99gz0/view"
+  },
+  {
+    title: "Assainissement des lieux de travail",
+    link: "https://drive.google.com/file/d/1J8W9x5Fflbpv2S7a85yAqD2Z7k4N/view"
+  },
+  {
+    title: "Inspection systématique des travaux de manutention par engin",
+    link: "https://drive.google.com/file/d/1QPMWGsoLkAHge_86UXLb07tq2QR/view"
+  },
+  {
+    title: "Installation des pompes dragueuses dans les usines du site Khouribga",
+    link: "https://drive.google.com/file/d/1Q0UNRBNrPpZ4Zzlf2pOBE7/view"
+  },
+  {
+    title: "Activités à haut risque",
+    link: "https://drive.google.com/file/d/1LwFEcsVsWwHLKc6VTAJTbX8C8/view"
+  },
+  {
+    title: "Contrôle des travaux pour permis de travail",
+    link: "https://drive.google.com/file/d/1mfwQH7IN7XpHndpPMcaIem8857HA/view"
+  },
+  {
+    title: "Règles liées à la sécurité des convoyeurs",
+    link: "https://drive.google.com/file/d/1CVems_mgELpdSIs2ElYd1SM4/view"
+  },
+  {
+    title: "Mesure et contrôle des résistances de terre des postes électriques",
+    link: "https://drive.google.com/file/d/1F8gnNJ7p2bxQG6fb_CUL3AMPwRg/view"
+  },
+  {
+    title: "Gestion des déchets industriels OCP",
+    link: "https://drive.google.com/file/d/1QRFIDMe2TF8PD3AKAQaWh3kE/view"
+  }
+];
+
+const table = document.getElementById("moTable");
+
+moList.forEach(item=>{
+  table.innerHTML += `
+    <tr>
+      <td>${item.title}</td>
+      <td>
+        <a class="pdf" href="${item.link}" target="_blank">Ouvrir</a>
+      </td>
+    </tr>
+  `;
+});
+</script>
+
+</body>
+</html>
