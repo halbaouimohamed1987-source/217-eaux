@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politiques HSE & Qualité</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background-image:url("water-bg.jpg");
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+header{
+  background:rgba(111,66,193,0.85);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+section{
+  max-width:900px;
+  margin:40px auto;
+  padding:30px 20px;
+  background:rgba(255,255,255,0.95);
+  border-radius:10px;
+}
+
+h2{
+  margin-top:30px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#6f42c1;
+}
+
+.note{
+  font-size:14px;
+  color:#333;
+  margin-bottom:15px;
+  font-style:italic;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+tr{
+  border-bottom:1px solid #ccc;
+}
+
+td{
+  padding:12px 8px;
+  font-size:15px;
+}
+
+td:last-child{
+  text-align:right;
+}
+
+a.pdf{
+  background:#6f42c1;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a.pdf:hover{
+  background:#4b2f83;
+}
+
+footer{
+  background:rgba(33,37,41,0.85);
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  margin-top:40px;
+}
+
+/* Search input - تم حذفه */
+/* #searchInput{
+  width:100%;
+  padding:10px;
+  font-size:16px;
+  margin-bottom:20px;
+  border-radius:5px;
+  border:1px solid #ccc;
+} */
+</style>
+</head>
+
+<body>
+
+<section>
+  <!-- خانة البحث تم حذفها -->
+  <div id="content"></div>
+</section>
+
+<footer>
+  <p>© 2025 – Plateforme HSE</p>
+</footer>
+
+<script>
+const politiques = [
+  {
+    category:"Procédure d’urgence",
+    icon:"📜",
+    cssClass:"Procedure-urgence",
+    note:".",
+    note:"Intervention, Évacuation, Secours, Communication.",
+    items:[
+      { title:"Bassin", id:"1xUeDU2PQn2G6RhKZGDn8NmvBmotW4NtU" },
+      { title:"Bache d'eau industrielle", id:"1WkSzCo4AJHy_1NBWysrMdOkDB0ddaMHk" },
+      { title:"Bassin 1000 STEP", id:"1nsSJI3YVpkLzyQ462lFZXndXpuj5MczL" },
+      { title:"Plan de secours REGARD", id:"13omHyt0ky_KUnBzRpzwBSjv9T8k62fhV" },
+      { title:"PS tank a chlore", id:"1oU3t16ExscU4-d8h3OJnWEOpxx6Dj2mo" },
+      { title:"tour CL2 FBS", id:"18cq-E5mInnLUUedLpitH99DPpSH3h_sW" },
+      { title:"Travaux en hauteur plan de secours et d'intervention", id:"1AfS2Uz2LZo5Tf1pgOzGupV_9RT-ZRoYa" },
+    ]
+  }
+];
+
+const container = document.getElementById("content");
+
+function renderPolitiques(){
+  container.innerHTML="";
+  politiques.forEach(group=>{
+    let html = `<h2 class="${group.cssClass}">${group.icon} ${group.category}</h2>
+                <div class="note">${group.note}</div>
+                <table>`;
+    group.items.forEach(item=>{
+      html += `
+        <tr>
+          <td>${item.title}</td>
+          <td>`;
+      if(item.id){
+        html += `<a class="pdf" href="https://drive.google.com/file/d/${item.id}/preview" target="_blank">Ouvrir</a>`;
+      } else {
+        html += `<span style="color:#999;">Non disponible</span>`;
+      }
+      html += `</td></tr>`;
+    });
+    html += "</table>";
+    container.innerHTML += html;
+  });
+}
+
+// Initial render
+renderPolitiques();
+</script>
+
+</body>
+</html>
