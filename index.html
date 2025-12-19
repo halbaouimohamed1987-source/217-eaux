@@ -29,11 +29,11 @@ header {
   border-radius: 0 0 10px 10px;
 }
 
-/* ===== NEWS TICKER (شفاف) ===== */
+/* ===== NEWS TICKER ===== */
 .news-ticker {
   width: 100%;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.25); /* الخلفية شفافة */
+  background: rgba(0, 0, 0, 0.25);
   padding: 8px 0;
   backdrop-filter: blur(3px);
 }
@@ -43,7 +43,7 @@ header {
   white-space: nowrap;
   padding-left: 100%;
   animation: scrollNews 20s linear infinite;
-  color: #ffffff;              /* النص غير شفاف */
+  color: #ffffff;
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0,0,0,0.7);
 }
@@ -92,7 +92,7 @@ section {
   transform: scale(1.03);
 }
 
-/* البطاقات */
+/* ===== CARDS ===== */
 .card {
   background-size: cover;
   background-position: center;
@@ -100,7 +100,8 @@ section {
   padding: 10px;
   min-height: 220px;
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-start;   /* 🔹 العنوان في الأعلى */
+  justify-content: center;   /* 🔹 في المنتصف أفقياً */
   cursor: pointer;
   transition: transform 0.2s;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -111,9 +112,10 @@ section {
 }
 
 .card h2 {
-  background: rgba(255,255,255,0.6);
-  padding: 5px;
-  border-radius: 4px;
+  background: rgba(255,255,255,0.7);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -147,7 +149,6 @@ footer {
 <div class="overlay">
 
 <header>
-  <!-- شريط المستجدات -->
   <div class="news-ticker">
     <div class="news-content" id="newsContent"></div>
   </div>
@@ -182,11 +183,10 @@ footer {
 </div>
 
 <script>
-/* ===== المستجدات ===== */
 const newsItems = [
-  "Cantact sécurité de la semaine: Vérification des protections des organes tournantes ",
-  "Audit dépoiement Salamaty prévue le 22 décembre",
-  "Votre engagement est essentiel : contribuez activement à l’augmentation du taux de remontée des incidents.",
+  "Contact sécurité de la semaine : Vérification des protections des organes tournants",
+  "Audit déploiement Salamaty prévu le 22 décembre",
+  "Votre engagement est essentiel : contribuez activement à la remontée des incidents",
 ];
 
 document.getElementById("newsContent").textContent =
