@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standards HSE</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background-image:url("water-bg.jpg");
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+header{
+  background:rgba(11,94,215,0.85);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+section{
+  max-width:1100px;
+  margin:40px auto;
+  padding:30px 20px;
+  background:rgba(255,255,255,0.9);
+  border-radius:10px;
+}
+
+h2{
+  color:#0b5ed7;
+  margin-top:30px;
+}
+
+.note{
+  font-size:14px;
+  color:#333;
+  margin-bottom:15px;
+  font-style:italic;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+tr{
+  border-bottom:1px solid #ccc;
+}
+
+td{
+  padding:12px 8px;
+  font-size:15px;
+}
+
+td:last-child{
+  text-align:right;
+}
+
+a.pdf{
+  background:#0b5ed7;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a.pdf:hover{
+  background:#084298;
+}
+
+footer{
+  background:rgba(33,37,41,0.85);
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Standards HSE</h1>
+  <p>PSM • Opérationnels • Gouvernance</p>
+</header>
+
+<section id="content"></section>
+
+<footer>
+  <p>© 2025 – Plateforme HSE</p>
+</footer>
+
+<script>
+const standards = [
+  {
+    category:"Standards PSM",
+    note:"Gestion des risques majeurs et maîtrise des changements, équipements et atmosphères dangereuses.",
+    items:[
+      { title:"MOC – Management of Change", id:"1bMjoh3yi0Yh_4KQ8ahDkKZFLAA2C30_3" },
+      { title:"Gestion et inspection des caillebotis", id:"1sOYo9rWHA6ND6EnfCMXGaTz-MlnwRWw" },
+      { title:"GEEX – Atmosphères explosives", id:"1esljZdvo9aJctUSV5-GDKHMdFs3lb4dP" }
+    ]
+  },
+  {
+    category:"Standards Opérationnels",
+    note:"Règles HSE applicables aux activités quotidiennes, travaux et circulation interne.",
+    items:[
+      { title:"TH", id:"1ql0UVnp3kRkOG0OmR9YiUqaz67rpd6b8" },
+      { title:"Hygiène des locaux", id:"1qLll-YW46OeJT6W33bC-nGd7yGQJSUza" },
+      { title:"Circulation", id:"1Uj8flTrVE5JfGMMFAbPdUzj3nZW0-w2S" },
+      { title:"AT & P", id:"1zMQPcGBaefaJgXG3Zid98VT210AOX" }
+    ]
+  },
+  {
+    category:"Standards de Gouvernance",
+    note:"Pilotage du système HSE, leadership, audits et rituels de suivi.",
+    items:[
+      { title:"VOSE", id:"1Yzfw629BxlKrmeHMoJ91oUz2Ue3-p8N" },
+      { title:"GIASE", id:"1qKMOQSDBzApnntAiVE-T4kHEQzxZ0qL" },
+      { title:"Audit HSE", id:"1Yw3PscD2nkj0HLE6dDQFgjpVJPzUZI" }
+    ]
+  }
+];
+
+const container = document.getElementById("content");
+
+standards.forEach(group=>{
+  let html = `<h2>${group.category}</h2>
+              <div class="note">${group.note}</div>
+              <table>`;
+  group.items.forEach(item=>{
+    html += `
+      <tr>
+        <td>${item.title}</td>
+        <td>
+          <a class="pdf"
+             href="https://drive.google.com/file/d/${item.id}/preview"
+             target="_blank">Ouvrir</a>
+        </td>
+      </tr>`;
+  });
+  html += "</table>";
+  container.innerHTML += html;
+});
+</script>
+
+</body>
+</html>
