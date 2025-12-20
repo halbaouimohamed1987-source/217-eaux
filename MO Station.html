@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modes Opératoires – HSE</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background-image:url("water-bg.jpg");
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+header{
+  background:rgba(11,94,215,0.85);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+section{
+  max-width:1000px;
+  margin:40px auto;
+  padding:30px 20px;
+  background:rgba(255,255,255,0.88);
+  border-radius:10px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+tr{
+  border-bottom:1px solid #ccc;
+}
+
+td{
+  padding:12px 8px;
+  font-size:15px;
+  color:#000;
+}
+
+td:last-child{
+  text-align:right;
+}
+
+a.button{
+  background:#0b5ed7;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a.button:hover{
+  background:#084298;
+}
+
+span.disabled{
+  color:#999;
+  font-style:italic;
+}
+
+footer{
+  background:rgba(33,37,41,0.85);
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Modes Opératoires</h1>
+  <p>Procédures • Sécurité • Maintenance</p>
+</header>
+
+<section>
+  <table id="moTable"></table>
+</section>
+
+<footer>
+  <p>© 2025 – Plateforme HSE</p>
+</footer>
+
+<script>
+const docs = [
+  { title:"Changement chemise Pompes KSP – Démontage", id:"1oaZ674EKnuWPqBrgFV3uB0ygbkrPXyqu" },
+  { title:"Changement chemise Pompes KSP – Montage", id:"1tsd56aIQ90nM72rOenCFI5MEV1DyKbzC" },
+
+  { title:"Changement chemise Pompes DRLV – Démontage", id:"1E4AfRGefr_ZzGHp6OPybSebN4qqnGuht" },
+  { title:"Changement chemise Pompes DRLV – Montage", id:"1DIFu3m4E6e_GiMhjvVjvgkortqvqGOEA" },
+
+  { title:"Changement roulements – Démontage", id:"1KI2OVoV2KPJX6NFGFjTaS1DHQbnOMFxd" },
+  { title:"Changement roulements – Montage", id:"109Y4ncnaoTrmP-8VEm74ZHwWoOVcZoSE" },
+
+  { title:"Réglage tresses après changement", id:"1Xr3AUWk40KGWeLgxK43dERzbR0_z5NXQ" },
+  { title:"Changement des tresses", id:"1g4Xlk-KAQPAfPNfwN0HIEwipy2RgsEwH" },
+
+  { title:"Pose et dépose des pompes – Dépose", id:"1mh8NqK4REvTNjs7PkcGW00_Tw6jvwgqg" },
+  { title:"Pose et dépose des pompes – Pose", id:"1fapCWrrzpVjhdGpyQVQwmZd19chLWFw4" },
+
+  { title:"Pose et dépose moteurs électriques – Dépose", id:"1IOVFqxG0unutAD4CJfnhKDKWHJbeydPt" },
+  { title:"Pose et dépose moteurs électriques – Pose", id:"1ZEsWuy6ctKkOl5-ERJ2C02zbc4K5jMnK" },
+
+  { title:"Changement des équipements hydrauliques", id:"1PaK-3tNh2jnO3lcQZP-4oimv5kXifaCr" },
+
+  { title:"Entretien des réducteurs des vannes motorisées – Dépose", id:"1yaDRCmDVwXRUz8PtMC2nzmklRmVbWVLf" },
+  { title:"Entretien des réducteurs des vannes motorisées – Pose", id:"13KgWADVnyG6cYllQjC5WMc4cvqBZRRTq" },
+
+  { title:"Entretien des réducteurs des vannes non motorisées", id:"1kJ35xZ9BycLuUj_OCvpt8mf29wjo36K5" },
+
+  { title:"Entretien systématique des compresseurs d’air", id:"1dXWkXh6wNptg_oK_Z2HPMpZJjmD6wLuA" },
+  { title:"Pose et dépose compresseurs d’air", id:"1FFO5TiE_loikdO9xViduQLO-eySd5Q8t" },
+
+  { title:"Entretien pompe et circuit de graissage centralisé", id:"" },
+
+  { title:"Rafistolage des conduites", id:"1DP_Tp0N4zMyuIIf-YixcTUH4g21zslP-" },
+
+  { title:"Changement des joints d’étanchéité", id:"" },
+
+  { title:"Maintenance des équipements hydrauliques de la BAB", id:"1x96mhAnNls5VEsPO_XzOsZmgTGFrU4Qv" },
+
+  { title:"Pose et dépose pompes recyclage de la soude", id:"" }
+];
+
+const table = document.getElementById("moTable");
+
+docs.forEach(doc=>{
+  table.innerHTML += `
+    <tr>
+      <td>${doc.title}</td>
+      <td>
+        ${
+          doc.id
+          ? `<a class="button" href="https://drive.google.com/file/d/${doc.id}/preview" target="_blank">Ouvrir</a>`
+          : `<span class="disabled">Lien à ajouter</span>`
+        }
+      </td>
+    </tr>
+  `;
+});
+</script>
+
+</body>
+</html>
