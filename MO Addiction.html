@@ -84,7 +84,7 @@ footer{
 </section>
 
 <footer>
-  <p>© 2025 – Plateforme HSE</p>
+  © 2025 – Plateforme HSE
 </footer>
 
 <script>
@@ -92,14 +92,14 @@ const docs = [
   { title:"Préparation de pénétration sur espace confiné", mo:"1G9vVmvShRcoJDjwaPnhXROOkhOvibQOb", adrpt:"" },
   { title:"Changement des équipements des regards", mo:"1UmzB4viaLWzu1lZb6XXuVMHHVjxtcxhl", adrpt:"" },
   { title:"Excavation", mo:"1JRLiC3kzjN5akzYoZdun9ad_6rQM6Jxj", adrpt:"" },
-  { title:"Sondage Mécanique", mo:"d/1cIVl2qd6C3epYiln4yhk6i5XTkdQopGM", adrpt:"" },
-  { title:"Installation d'un manchons", mo:"d/1N1L09dYt0i6dRASU5pJKDCClUahZycHx", adrpt:"" },
+  { title:"Sondage mécanique", mo:"1cIVl2qd6C3epYiln4yhk6i5XTkdQopGM", adrpt:"" },
+  { title:"Installation d'un manchon", mo:"1N1L09dYt0i6dRASU5pJKDCClUahZycHx", adrpt:"" },
   { title:"Matage au plomb avec tresse pour étanchéité", mo:"1UchemNEXxvC3HUWc_RWDuqypNcA4jid9", adrpt:"" },
   { title:"Changement d'élément", mo:"1UchemNEXxvC3HUWc_RWDuqypNcA4jid9", adrpt:"" },
   { title:"Rafistolage", mo:"1I4NDBdU8BN5hNTs6BmZ88fwSHHDk3qvu", adrpt:"" },
-  { title:"Travaux Oxycoupage", mo:"13y9_xCMLpyP-cmP8w-EaT9eKsZyb60Qy, adrpt:"" },
+  { title:"Travaux d’oxycoupage", mo:"13y9_xCMLpyP-cmP8w-EaT9eKsZyb60Qy", adrpt:"" },
   { title:"Travaux de soudage", mo:"1k6BNYXbMHwh3Td5B4ZJpmhi9QpYhKIiR", adrpt:"" },
-  { title:"Travaux de moulage", mo:"1U88vIKTHrldvJnqHkS8bzJ-ukXw3qzRg", adrpt:"" },
+  { title:"Travaux de moulage", mo:"1U88vIKTHrldvJnqHkS8bzJ-ukXw3qzRg", adrpt:"" }
 ];
 
 const table = document.getElementById("moTable");
@@ -111,7 +111,7 @@ docs.forEach(doc=>{
       <td>
         <div style="display:flex; gap:8px; justify-content:flex-end;">
           <a class="button" href="https://drive.google.com/file/d/${doc.mo}/preview" target="_blank">MO</a>
-          <a class="button" href="https://drive.google.com/file/d/${doc.adrpt}/preview" target="_blank">ADRPT</a>
+          ${doc.adrpt ? `<a class="button" href="https://drive.google.com/file/d/${doc.adrpt}/preview" target="_blank">ADRPT</a>` : ""}
         </div>
       </td>
     </tr>
@@ -121,4 +121,3 @@ docs.forEach(doc=>{
 
 </body>
 </html>
-
