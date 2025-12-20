@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Politiques HSE & Qualité</title>
+<title>Standards & Procédures HSE</title>
 
 <style>
 body{
@@ -14,27 +14,17 @@ body{
   background-attachment:fixed;
 }
 
-header{
-  background:rgba(111,66,193,0.85);
-  color:#fff;
-  text-align:center;
-  padding:20px;
-}
-
 section{
-  max-width:900px;
+  max-width:1100px;
   margin:40px auto;
   padding:30px 20px;
-  background:rgba(255,255,255,0.95);
+  background:rgba(255,255,255,0.92);
   border-radius:10px;
 }
 
 h2{
-  margin-top:30px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:#6f42c1;
+  color:#0b5ed7;
+  margin-top:35px;
 }
 
 .note{
@@ -63,7 +53,7 @@ td:last-child{
 }
 
 a.pdf{
-  background:#6f42c1;
+  background:#0b5ed7;
   color:#fff;
   padding:6px 14px;
   border-radius:5px;
@@ -72,7 +62,7 @@ a.pdf{
 }
 
 a.pdf:hover{
-  background:#4b2f83;
+  background:#084298;
 }
 
 footer{
@@ -82,77 +72,69 @@ footer{
   padding:12px;
   margin-top:40px;
 }
-
-/* Search input - تم حذفه */
-/* #searchInput{
-  width:100%;
-  padding:10px;
-  font-size:16px;
-  margin-bottom:20px;
-  border-radius:5px;
-  border:1px solid #ccc;
-} */
 </style>
 </head>
 
 <body>
 
-<section>
-  <!-- خانة البحث تم حذفها -->
-  <div id="content"></div>
-</section>
+<section id="content"></section>
 
 <footer>
-  <p>© 2025 – Plateforme HSE</p>
+  © 2025 – Plateforme HSE
 </footer>
 
 <script>
-const politiques = [
-  {
-    category:"Procédure d’urgence",
-    icon:"📜",
-    cssClass:"Procedure-urgence",
-    note:".",
-    note:"Intervention, Évacuation, Secours, Communication.",
-    items:[
-      { title:"Bassin", id:"1xUeDU2PQn2G6RhKZGDn8NmvBmotW4NtU" },
-      { title:"Bache d'eau industrielle", id:"1WkSzCo4AJHy_1NBWysrMdOkDB0ddaMHk" },
-      { title:"Bassin 1000 STEP", id:"1nsSJI3YVpkLzyQ462lFZXndXpuj5MczL" },
-      { title:"Plan de secours REGARD", id:"13omHyt0ky_KUnBzRpzwBSjv9T8k62fhV" },
-      { title:"PS tank a chlore", id:"1oU3t16ExscU4-d8h3OJnWEOpxx6Dj2mo" },
-      { title:"tour CL2 FBS", id:"18cq-E5mInnLUUedLpitH99DPpSH3h_sW" },
-      { title:"Travaux en hauteur plan de secours et d'intervention", id:"1AfS2Uz2LZo5Tf1pgOzGupV_9RT-ZRoYa" },
-    ]
-  }
+const documents = [
+
+/* ================= PROCÉDURES D’URGENCE ================= */
+{
+  category:"Procédures d’urgence & POI",
+  note:"Plans d’urgence, évacuation, alerte, secours et gestion de crise.",
+  items:[
+    { title:"Annexes POI-PGCC V3", link:"https://drive.google.com/file/d/1bIzbc5UrzQL97v3XofG40orHhZTGxO1s/view" },
+    { title:"INS-SE-03-01 – Consigne d’évacuation", link:"https://drive.google.com/file/d/1Emodh8idDIvQwIIPPjFWUSEYJUVuPbg3/view" },
+    { title:"POI GCC V6", link:"https://drive.google.com/file/d/1ZOnZaTTWulibOuxZYSI93dMvhR0yUFMr/view" },
+    { title:"Procédure d’urgence et d’alerte – OIIK V3", link:"https://drive.google.com/file/d/1x-10nwSF-bH2sMf__quGg0jz287mfyMx/view" },
+    { title:"PRO-SE-03", link:"https://drive.google.com/file/d/1u5yZ0aV27XH5iZQdvKhq4FYJXTSLij-w/view" },
+    { title:"SER-SE-03-01 – Numéros d’alerte par zone OIIK-G", link:"https://drive.google.com/file/d/1dkO3-2EyhOsKCLFc2nGM3OBZwBWwx5eq/view" }
+  ]
+},
+
+/* ================= PLANS DE SECOURS ================= */
+{
+  category:"Plans de secours spécifiques",
+  note:"Plans de secours par ouvrage, bassin et installations à risque.",
+  items:[
+    { title:"Bassin", link:"https://drive.google.com/file/d/1xUeDU2PQn2G6RhKZGDn8NmvBmotW4NtU/preview" },
+    { title:"Bâche d’eau industrielle", link:"https://drive.google.com/file/d/1WkSzCo4AJHy_1NBWysrMdOkDB0ddaMHk/preview" },
+    { title:"Bassin 1000 STEP", link:"https://drive.google.com/file/d/1nsSJI3YVpkLzyQ462lFZXndXpuj5MczL/preview" },
+    { title:"Plan de secours REGARD", link:"https://drive.google.com/file/d/13omHyt0ky_KUnBzRpzwBSjv9T8k62fhV/preview" },
+    { title:"PS Tank à chlore", link:"https://drive.google.com/file/d/1oU3t16ExscU4-d8h3OJnWEOpxx6Dj2mo/preview" },
+    { title:"Tour Cl₂ FBS", link:"https://drive.google.com/file/d/18cq-E5mInnLUUedLpitH99DPpSH3h_sW/preview" },
+    { title:"Travaux en hauteur – Plan de secours", link:"https://drive.google.com/file/d/1AfS2Uz2LZo5Tf1pgOzGupV_9RT-ZRoYa/preview" }
+  ]
+}
+
 ];
 
 const container = document.getElementById("content");
 
-function renderPolitiques(){
-  container.innerHTML="";
-  politiques.forEach(group=>{
-    let html = `<h2 class="${group.cssClass}">${group.icon} ${group.category}</h2>
-                <div class="note">${group.note}</div>
-                <table>`;
-    group.items.forEach(item=>{
-      html += `
-        <tr>
-          <td>${item.title}</td>
-          <td>`;
-      if(item.id){
-        html += `<a class="pdf" href="https://drive.google.com/file/d/${item.id}/preview" target="_blank">Ouvrir</a>`;
-      } else {
-        html += `<span style="color:#999;">Non disponible</span>`;
-      }
-      html += `</td></tr>`;
-    });
-    html += "</table>";
-    container.innerHTML += html;
+documents.forEach(group=>{
+  let html = `<h2>${group.category}</h2>
+              <div class="note">${group.note}</div>
+              <table>`;
+  group.items.forEach(item=>{
+    html += `
+      <tr>
+        <td>${item.title}</td>
+        <td>
+          <a class="pdf" href="${item.link}" target="_blank">Ouvrir</a>
+        </td>
+      </tr>`;
   });
-}
-
-// Initial render
-renderPolitiques();
+  html += "</table>";
+  container.innerHTML += html;
+});
 </script>
 
 </body>
