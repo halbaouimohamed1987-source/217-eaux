@@ -124,6 +124,46 @@ footer {
   font-size: 14px;
 }
 
+/* ===== VIDEO POPUP ===== */
+#videoModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#videoBox {
+  background: #000;
+  width: 90%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 8px;
+  position: relative;
+}
+
+#videoBox iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: none;
+}
+
+#closeVideo {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .grid {
@@ -135,6 +175,7 @@ footer {
   .grid {
     grid-template-columns: 1fr;
   }
+  #videoBox { height: 250px; }
 }
 </style>
 </head>
@@ -175,7 +216,16 @@ footer {
 
 </div>
 
+<!-- ===== VIDEO MODAL ===== -->
+<div id="videoModal">
+  <div id="videoBox">
+    <button id="closeVideo" onclick="closeVideo()">✖ Fermer</button>
+    <iframe id="videoFrame" allow="autoplay"></iframe>
+  </div>
+</div>
+
 <script>
+/* NEWS */
 const newsItems = [
   "Contact sécurité de la semaine : Vérification des protections des organes tournants",
   "Audit déploiement Salamaty prévu le 22 décembre",
@@ -185,6 +235,23 @@ const newsItems = [
 
 document.getElementById("newsContent").textContent =
   newsItems.join(" ⚡ ");
+
+/* VIDEO FUNCTIONS */
+function openVideo() {
+  document.getElementById("videoFrame").src =
+    "https://drive.google.com/file/d/1wdk6z20ZIvw_Mxr7BXdnWEs9wmmVQgQ7/preview";
+  document.getElementById("videoModal").style.display = "flex";
+}
+
+function closeVideo() {
+  document.getElementById("videoFrame").src = "";
+  document.getElementById("videoModal").style.display = "none";
+}
+
+/* OPEN AUTOMATICALLY */
+window.addEventListener("load", () => {
+  setTimeout(openVideo, 1000); // بعد ثانية
+});
 </script>
 
 </body>
